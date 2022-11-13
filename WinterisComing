@@ -1,0 +1,23 @@
+package com.lasha.serveridanfotosdasaxelebiswamogeba;
+
+public class WinterisComing {
+
+
+
+    public static String[] name = new String[] { "ლაშა სირაძე " ,"გიორგი გიორგაძე "  , "ფრიდონ ხალვაში " , "ალექსი ალექსიძე ", "ვაჟა ფშაველა ", "გალაკთიონ ტაბიძე "
+
+
+    };
+
+
+    public static String[] description = new String[] { "ლაშა სირაძე" ,"გიორგი გიორგაძე "  , "ფრიდონ ხალვაში " , "ალექსი ალექსიძე ", "ვაჟა ფშაველა ", "გალაკთიონ ტაბიძე "
+
+    };
+
+
+
+    public static String[] image = new String[]{"https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg",
+            " https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg"
+    };
+}
