@@ -1,0 +1,37 @@
+package com.lasha.serveridanfotosdasaxelebiswamogeba;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+
+
+public class DatelsActiviti extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_datels_activiti);
+
+        GameOfCharacter jhonsnov = (GameOfCharacter) getIntent().getExtras().getSerializable("character");
+
+        TextView nameView = findViewById(R.id.name);
+        TextView custom  = findViewById(R.id.description);
+        ImageView imageView = findViewById(R.id.image);
+
+        nameView.setText(jhonsnov.getName());
+        custom.setText(jhonsnov.getImage());
+
+        Picasso.with(this)
+                .load(jhonsnov.getImage())
+                .resize(200,200)
+                .centerCrop()
+                .into(imageView);
+
+
+    }
+}
