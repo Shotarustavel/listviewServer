@@ -1,0 +1,87 @@
+package Adapters;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.lasha.serveridanfotosdasaxelebiswamogeba.GameOfCharacter;
+import com.lasha.serveridanfotosdasaxelebiswamogeba.R;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+
+public class CustomDragonGlassAdapters extends BaseAdapter {
+
+    final Context context ;
+    final ArrayList<GameOfCharacter> listData ;
+    final LayoutInflater inflater;
+
+
+
+    public CustomDragonGlassAdapters(Context context ,ArrayList<GameOfCharacter> data) {
+
+        this.context = context;
+        this.listData = data;
+        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    public int getCount() {
+        return listData.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return this.listData.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+
+        View itemview ;
+        ViewHolder viewHolder;
+        if(view == null) {
+            itemview = View.inflate(context, R.layout.listview_item, null);
+            viewHolder = new ViewHolder();
+
+            ImageView imageView =  itemview.findViewById(R.id.image);
+            TextView nameView =  itemview.findViewById(R.id.name);
+
+            viewHolder.imageView = imageView;
+            viewHolder.nameView = nameView;
+
+            itemview.setTag(viewHolder);
+        }else {
+        itemview = view ;
+        viewHolder = (ViewHolder) itemview.getTag();
+
+        }
+        GameOfCharacter jonsnow = (GameOfCharacter) getItem(i);
+
+      viewHolder.nameView.setText(jonsnow.getName());
+
+        Picasso.with(context)
+                .load(jonsnow.getImage())
+                .resize(200,200)
+                .centerCrop()
+                .into(viewHolder.imageView);
+
+        return itemview;
+    }
+    static class ViewHolder {
+
+         ImageView imageView;
+         TextView nameView;
+
+    }
+}
